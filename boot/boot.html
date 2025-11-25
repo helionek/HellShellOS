@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HellShellOS</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="boot.css">
+</head>
+<body>
+<div class="background-animation"></div>
+
+<div class="screen">
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">HS</div>
+            <span>HellShellOS</span>
+        </div>
+        <div class="system-info">
+            <span>Kernel 5.15.0</span>
+            <span>Secure Boot</span>
+            <span id="current-time">--:--:--</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <div class="control-dot close"></div>
+                    <div class="control-dot minimize"></div>
+                    <div class="control-dot maximize"></div>
+                </div>
+                <div class="terminal-title">terminal — boot@hellshell — JetBrains Mono 14pt</div>
+                <div style="width: 60px;"></div>
+            </div>
+            
+            <div class="terminal-frame">
+                <div class="log" id="log"></div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-icon">⏱</div>
+                    <span>Boot Progress</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress">
+                        <div class="progress-bar" id="bar"></div>
+                    </div>
+                    <div class="progress-info">
+                        <div id="stage">Initializing</div>
+                        <div id="percent">0%</div>
+                    </div>
+                </div>
+                <div class="system-item">
+                    <span class="system-label">ETA</span>
+                    <span class="system-value" id="eta">--</span>
+                </div>
+                <div class="system-item">
+                    <span class="system-label">Uptime</span>
+                    <span class="system-value" id="uptime">0s</span>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-icon">⚙</div>
+                    <span>System Info</span>
+                </div>
+                <div class="system-grid">
+                    <div class="system-item">
+                        <span class="system-label">Version</span>
+                        <span class="system-value">HellShellOS 1.0.3</span>
+                    </div>
+                    <div class="system-item">
+                        <span class="system-label">Architecture</span>
+                        <span class="system-value">x86_64</span>
+                    </div>
+                    <div class="system-item">
+                        <span class="system-label">Session ID</span>
+                        <span class="system-value accent">HS-7B3F-92A1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="boot.js"></script>
+</body>
+</html>
