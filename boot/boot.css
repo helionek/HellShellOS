@@ -29,6 +29,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 html, body {
@@ -84,7 +85,6 @@ html, body {
     border-radius: var(--radius-xl);
 }
 
-/* Header */
 .header {
     position: absolute;
     top: 0;
@@ -130,7 +130,6 @@ html, body {
     font-weight: 500;
 }
 
-/* Main Content */
 .main-content {
     flex: 1;
     display: flex;
@@ -138,7 +137,6 @@ html, body {
     padding: 80px 24px 24px 24px;
 }
 
-/* Terminal */
 .terminal-container {
     flex: 1;
     display: flex;
@@ -214,7 +212,6 @@ html, body {
     margin-right: 12px;
     font-weight: 600;
     min-width: 16px;
-    user-select: none;
 }
 
 .text {
@@ -239,7 +236,6 @@ html, body {
     50% { opacity: 0; }
 }
 
-/* Sidebar */
 .sidebar {
     width: 320px;
     display: flex;
@@ -277,7 +273,6 @@ html, body {
     font-size: 12px;
 }
 
-/* Progress */
 .progress-container {
     margin-top: 8px;
 }
@@ -308,7 +303,6 @@ html, body {
     font-weight: 500;
 }
 
-/* System Info */
 .system-grid {
     display: grid;
     gap: 12px;
@@ -341,7 +335,55 @@ html, body {
     color: var(--accent-primary);
 }
 
-/* Responsive */
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.input-prompt {
+    color: var(--accent-tertiary);
+    margin-right: 12px;
+    font-weight: 600;
+}
+
+.input-field {
+    background: transparent;
+    border: none;
+    color: var(--text-terminal);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    caret-color: var(--accent-tertiary);
+}
+
+.input-field::placeholder {
+    color: var(--text-muted);
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 4px;
+    padding: 6px 8px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-sm);
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 1200px) {
     .screen {
         flex-direction: column;
